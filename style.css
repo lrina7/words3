@@ -1,0 +1,316 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Neue", cursive;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+h1 {
+  color: #e16bff;
+  margin-bottom: 20px;
+  font-size: 2.3rem;
+}
+
+h2 {
+  color: #e16bff;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+/* ===== ПОЛЕ СЛОВА ===== */
+.word-container {
+  font-size: 3rem;
+  margin: 25px 0;
+  color: #333;
+  letter-spacing: 5px;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.word-part {
+  display: inline-block;
+  margin: 0 2px;
+  line-height: 1.5;
+}
+
+.missing-letter {
+  width: 30px;
+  font-size: 2rem;
+  padding: 0 5px;
+  min-width: 30px;
+  display: inline-block;
+  text-align: center;
+  cursor: text;
+  position: relative;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.missing-letter.active {
+  background-color: #f0f8ff;
+  border-radius: 3px;
+  box-shadow: 0 0 0 2px #4ecdc4;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ===== КНОПКИ ===== */
+button {
+  background: #e16bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Comic Neue", cursive;
+  margin: 10px 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #ff5252;
+}
+
+button:active {
+  transform: scale(0.7);
+  background: #bf1010;
+}
+#checkButton {
+  margin-top: 20px;
+}
+
+.retry-btn {
+  background: #e16bff !important;
+}
+
+.retry-btn:hover {
+  background: #7bc604 !important;
+}
+
+/* ===== РЕЗУЛЬТАТЫ ===== */
+.result {
+  font-size: 2rem;
+  margin: 15px;
+  font-weight: bold;
+}
+
+.result:empty {
+  display: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.correct {
+  color: #4caf50;
+  animation: bounce 0.5s;
+}
+
+.wrong {
+  color: #ff6b6b;
+  animation: shake 0.4s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+/* ===== ФИНАЛЬНЫЙ ЭКРАН ===== */
+.final-screen {
+  animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.praise {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f9a825; /* яркое золото */
+  text-align: center;
+
+  margin: 0;
+  text-shadow: 1px 1px 2px #ffecb3;
+  animation: praise-pop 1s ease-in-out;
+}
+@keyframes praise-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== ОШИБКИ ===== */
+.mistakes-box {
+  background: #dcffc4;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.mistakes-box h3 {
+  margin-top: 0;
+  color: #d32f2f;
+}
+
+.mistakes-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mistakes-box li {
+  margin: 8px 0;
+  font-size: 1.2rem;
+  color: #d32f2f;
+  padding: 5px;
+  border-bottom: 1px dashed #ffd700;
+}
+
+/* ===== АНИМАЦИИ ===== */
+.star-animation {
+  position: absolute;
+  font-size: 2rem;
+  animation: starFly 1.5s ease-out forwards;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes starFly {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: relative;
+  height: 100px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.confetti:empty {
+  display: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.confetti-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: fall 3s linear forwards;
+  top: -20px;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120px) rotate(360deg);
+  }
+}
+
+/* ===== СОВА ===== */
+#owlImage {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
+  border-radius: 20%;
+  object-fit: cover;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+
+  .word-container {
+    font-size: 2rem;
+  }
+
+  .missing-letter {
+    min-width: 25px;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Словарные слова 2 класс</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Словарные слова <br />
+        3 класс
+      </h1>
+      <img src="assets/image/cat.jpg" alt="кот" id="owlImage" />
+      <h2 id="gameMessage">Подумай и вставь букву!</h2>
+
+      <div id="word" class="word-container"></div>
+      <div id="result" class="result"></div>
+      <button id="checkButton">Проверить</button>
+      <div id="finalScreen" class="final-screen" style="display: none">
+        <div id="confettiContainer" class="confetti"></div>
+        <div id="mistakesContainer" class="mistakes-box" style="display: none">
+          <h3>Ошибки:</h3>
+          <ul id="mistakeList"></ul>
+        </div>
+        <button id="retryMistakes" class="retry-btn">
+          Работа над ошибками
+        </button>
+        <button id="playAgain" class="retry-btn">Играть ещё раз</button>
+      </div>
+    </div>
+    <script src="words.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
