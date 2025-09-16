@@ -43,7 +43,7 @@ h2 {
 /* ===== ПОЛЕ СЛОВА ===== */
 .word-container {
   font-size: 3rem;
-  margin: 25px 0;
+  margin: 10px 0;
   color: #333;
   letter-spacing: 5px;
   min-height: 80px;
@@ -304,6 +304,10 @@ button:active {
 @media (max-width: 500px) {
   .container {
     padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 
   .word-container {
