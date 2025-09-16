@@ -29,7 +29,7 @@ const words = [
   { word: "с_п_ги", answers: ["а", "о"], fullWord: "сапоги" },
   { word: "с_бака", answers: ["о"], fullWord: "собака" },
   { word: "т_л_виз_р", answers: ["е", "е", "о"], fullWord: "телевизор" },
-  { word: "т_вар_щ_", answers: ["о", "и", ""], fullWord: "товарищ" },
+  { word: "т_вар_щ", answers: ["о", "и"], fullWord: "товарищ" },
   { word: "ур_жай", answers: ["о"], fullWord: "урожай" },
   { word: "ябл_ня", answers: ["о"], fullWord: "яблоня" },
   { word: "ап__тит", answers: ["п", "е"], fullWord: "аппетит" },
